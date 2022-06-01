@@ -15,11 +15,16 @@ cd Flipper-IRDB-main/TVs
 
 2. Run the commands to populate `~/tv.ir`:
 ```
-grep -RiEh 'v-|v_down|v_dwn|vol_dn|vol_down|voldown|vol_dwn|voldwn|volume-|volume_down|volumedown' -A 5 | grep -v '\--' | sed 's/name.*/name: VOL-/' >> ~/tv.ir
+
+grep -RiEh 'channel+|channel_up|chan_up|chanup|ch_up' -A 5 | grep -v '\--' | sed 's/name.*/name: CH+/' >> ~/tv.ir
+
+grep -RiEh 'chan_down|chandown|chan_dwn|channel-|channel_dn|channel_down|ch_down|ch_dwn' -A 5 | grep -v '\--' | sed 's/name.*/name: CH-/' >> ~/tv.ir
+
+grep -RiEh 'mute' -A 5 | grep -v '\--' | sed 's/name.*/name: MUTE/' >> ~/tv.ir
 
 grep -RiEh 'v+|volume+|volume_up|volumeup|vol_up|volup|v_up' -A 5 | grep -v '\--' | sed 's/name.*/name: VOL+/' >> ~/tv.ir
 
-TODO: Add mute and channel control button cmds here.
+grep -RiEh 'v-|v_down|v_dwn|vol_dn|vol_down|voldown|vol_dwn|voldwn|volume-|volume_down|volumedown' -A 5 | grep -v '\--' | sed 's/name.*/name: VOL-/' >> ~/tv.ir
 ```
 
 3. Manually go through the `~/tv.ir` output an ensure a '#' character is between each command and remove any duplicates. TODO: Automate this step.
