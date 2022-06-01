@@ -14,8 +14,8 @@ cd Flipper-IRDB-main/TVs
 ```
 
 2. Run the commands to populate `~/tv.ir`:
-```
 
+```
 grep -RiEh 'channel+|channel_up|chan_up|chanup|ch_up' -A 5 | grep -v '\--' | sed 's/name.*/name: CH+/' >> ~/tv.ir
 
 grep -RiEh 'chan_down|chandown|chan_dwn|channel-|channel_dn|channel_down|ch_down|ch_dwn' -A 5 | grep -v '\--' | sed 's/name.*/name: CH-/' >> ~/tv.ir
