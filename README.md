@@ -27,6 +27,6 @@ grep -RiEh 'v\+|volume\+|volume_up|volumeup|vol_up|volup|v_up' -A 5 | grep -v '\
 grep -RiEh 'v\-|v_down|v_dwn|vol_dn|vol_down|voldown|vol_dwn|voldwn|volume\-|volume_down|volumedown' -A 5 | grep -v '\--' | sed 's/name.*/name: VOL-/' >> ~/tv.ir
 ```
 
-3. Manually go through the `~/tv.ir` output an ensure a '#' character is between each command and remove any duplicates. TODO: Automate this step.
+3. Manually go through the `~/tv.ir` output an ensure a '#' character is between each command and remove any duplicates. Remove any entries that have "protocol: RCA" or else the remote will freeze or stop before sending all the commands. TODO: Automate this step.
 
-4. Copy the contents of the output file `~/tv.ir` and paste it into the end of the universal TV remote file on your Flipper SD card at `/infrared/assets/tv.ir`. Ensure that there aren't any duplicates introduced and the formatting is consistent.
+4. Copy the contents of the output file `~/tv.ir` and paste it into your existing universal TV remote file on your Flipper SD card at `/infrared/assets/tv.ir`. Paste it near the middle of the file between existing entries because the file is read from the top down and can be somewhat slow especially on slower SD cards. If pasted at the very top, the POWER button commands will take a bit longer to start. If pasted at the bottom, it can take a while to get past all the POWER entries to start. Double check that there aren't any duplicates introduced and the formatting is consistent.
