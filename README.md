@@ -1,8 +1,8 @@
-Adding remotes from the Flipper-IRDB project (https://github.com/UberGuidoZ/Flipper-IRDB/) into the Flipper Zero's Universal Remote functionality.
+Adding remotes from the [Flipper-IRDB project](https://github.com/UberGuidoZ/Flipper-IRDB/tree/main/TVs) into the Flipper Zero's Universal Remote functionality.
 
 # Files in this repo
 
-- `tv.ir` - Full Universal Remote containing Flipper-IRDB commands merged with the tv.ir file from the Flipper Zero Unleashed firmware.
+- `tv.ir` - Full Universal Remote containing [Flipper-IRDB](https://github.com/UberGuidoZ/Flipper-IRDB/tree/main/TVs) commands merged with the [`tv.ir` file from the Flipper Zero Unleashed firmware](https://github.com/Eng1n33r/flipperzero-firmware/blob/dev/assets/resources/infrared/assets/tv.ir).
 - `tv.ir.append` - Only the parsed remotes from Flipper-IRDB. Recommend merging with the `tv.ir` file from the Unleashed firmware. Doesn't include any power button controls because those are well covered already.
 
 # Verification
@@ -14,7 +14,7 @@ git clone https://github.com/UberGuidoZ/Flipper-IRDB/
 cd Flipper-IRDB-main/TVs
 ```
 
-2. Run the commands to populate `~/tv.ir`:
+2. Run the commands to populate `~/tv.ir.append`:
 
 ```
 grep -RiEh 'channel\+|channel_up|chan_up|chanup|ch_up' -A 5 | grep -v '\--' | sed 's/name.*/name: CH+/' >> ~/tv.ir.append
