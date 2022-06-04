@@ -2,7 +2,7 @@ Adding remotes from the [Flipper-IRDB project](https://github.com/UberGuidoZ/Fli
 
 # Files in this repo
 
-- `tv.ir` - Full Universal Remote containing [Flipper-IRDB](https://github.com/UberGuidoZ/Flipper-IRDB/tree/main/TVs) commands merged with the [`tv.ir` file from the Flipper Zero Unleashed firmware](https://github.com/Eng1n33r/flipperzero-firmware/blob/dev/assets/resources/infrared/assets/tv.ir).
+- `tv.ir` - Full Universal Remote containing [Flipper-IRDB](https://github.com/UberGuidoZ/Flipper-IRDB/tree/main/TVs) commands merged with the [`tv.ir` file from the Flipper Zero Unleashed firmware](https://github.com/Eng1n33r/flipperzero-firmware/blob/dev/assets/resources/infrared/assets/tv.ir). Can be dropped on your Flipper Zero's SD card at `/infrared/assets/tv.ir` to get up and running immediately on any firmware.
 - `tv.ir.append` - Only the parsed remotes from Flipper-IRDB. Recommend merging with the `tv.ir` file from the Unleashed firmware. Doesn't include any power button controls because those are well covered already. See note at bottom of the Verification section below on the best way to merge the files.
 
 # Verification
